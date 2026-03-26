@@ -1,0 +1,51 @@
+# 🔹 Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 🔹 Virtual environments
+venv/
+env/
+.venv/
+
+# 🔹 Environment variables (VERY IMPORTANT)
+.env
+.env.*
+
+# 🔹 SQLite database
+*.db
+*.sqlite3
+
+# 🔹 Logs
+*.log
+
+# 🔹 OS files
+.DS_Store
+Thumbs.db
+
+# 🔹 IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 🔹 Testing / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# 🔹 Build / distribution
+build/
+dist/
+*.egg-info/
+
+# 🔹 Node modules (if frontend exists)
+node_modules/
+
+
+# 🔹 GitHub Actions artifacts (optional)
+*.tar.gz
+
+# 🔹 Temporary files
+*.tmp
+*.bak

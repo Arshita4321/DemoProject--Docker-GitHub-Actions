@@ -1,0 +1,53 @@
+# 🔹 Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 🔹 Virtual environments
+venv/
+env/
+.venv/
+
+# 🔹 Environment variables (IMPORTANT - security)
+.env
+.env.*
+
+# 🔹 Git files
+.git
+.gitignore
+
+# 🔹 Docker files (optional)
+docker-compose.yml
+Dockerfile
+
+# 🔹 Logs
+*.log
+
+# 🔹 OS files
+.DS_Store
+Thumbs.db
+
+# 🔹 IDE / Editor files
+.vscode/
+.idea/
+
+# 🔹 Testing / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# 🔹 Node modules (if frontend exists)
+node_modules/
+
+# 🔹 Database files (optional - avoid copying local DB)
+*.db
+*.sqlite3
+
+# 🔹 Build artifacts
+dist/
+build/
+
+# 🔹 Temporary files
+*.tmp
+*.swp
