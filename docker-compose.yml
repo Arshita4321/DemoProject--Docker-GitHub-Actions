@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: fastapi_sqlite_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - sqlite_data:/app
+    environment:
+      DATABASE_URL: sqlite:///./heroes.db
+
+volumes:
+  sqlite_data:
