@@ -34,14 +34,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # ✅ Pass Docker username to compose
+      - name: Set Docker username
+        run: echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV
+
+      # ✅ Build image (uses image: from docker-compose.yml)
       - name: Build using docker compose
-        run: |
-          docker compose build
+        run: docker compose build
 
-      - name: Tag Docker image
-        run: |
-          docker tag fastapi_sqlite_app:latest ${{ secrets.DOCKER_USERNAME }}/fastapi-app:latest
+      # ✅ Optional debug (VERY useful)
+      - name: Show built images
+        run: docker images
 
+      # ✅ Save correct image
       - name: Save Docker image
         run: |
           docker save ${{ secrets.DOCKER_USERNAME }}/fastapi-app:latest | gzip > fastapi-app.tar.gz
@@ -79,6 +84,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      # ✅ Push correct image
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/fastapi-app:latest

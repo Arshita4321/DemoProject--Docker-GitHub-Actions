@@ -3,6 +3,7 @@ version: "3.9"
 services:
   web:
     build: .
+    image: ${DOCKER_USERNAME}/fastapi-app:latest   # ✅ IMPORTANT FIX
     container_name: fastapi_sqlite_app
     ports:
       - "8000:8000"
